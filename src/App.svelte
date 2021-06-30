@@ -6,10 +6,11 @@
 		{ name: 'lones', beltColor: 'blue', age: 39, id: 3 }
 	]
 
-	const deletePerson = (id) =>{
-		people = people.filter((person) => person.id != id)
-	}
+	const deletePerson = id => people = people.filter(person => person.id != id)
+	
+
 </script>
+
 
 <main>
 	{#each people as person (person.id)}
@@ -18,6 +19,12 @@
 			{person.name}
 		</h4>
 		<p>{person.age} years old, {person.beltColor} belt.</p>
+		{#if person.beltColor === 'blue'}
+			<p>Ill give blue</p>
+			{:else }
+			<p>Notting</p>
+		{/if}
+
 		<button on:click="{() => deletePerson(person.id)}"> Delete</button>
 	</div>
 	{:else}
