@@ -8,7 +8,7 @@ export let showModal = true;
 </script>'
 
 {#if  showModal}
-<div class="backdrop" on:click>
+<div class="backdrop" on:click|self>
     <div class="modal" class:promo={promo}>
         <p>{message}</p>
     </div>
