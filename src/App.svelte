@@ -1,4 +1,5 @@
 <script>
+import Modal from './components/Modal.svelte';
 
 	let people = [
 		{ name: 'john', beltColor: 'black', age: 25, id: 1 },
@@ -11,6 +12,7 @@
 
 </script>
 
+<Modal/>
 
 <main>
 	{#each people as person (person.id)}
