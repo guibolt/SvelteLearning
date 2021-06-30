@@ -8,13 +8,26 @@ import Modal from './components/Modal.svelte';
 	]
 
 	const deletePerson = id => people = people.filter(person => person.id != id)
-	
+	const exibitModal = () => showModal = !showModal
+
+	let showModal = false
+
 
 </script>
 
-<Modal/>
+
+<Modal
+ message ='Seja bem vindo'
+ promo={true} 
+ showModal = {showModal}
+ on:click={exibitModal}
+ />
 
 <main>
+	
+	<button on:click="{exibitModal}">
+		show modal
+	 </button>
 	{#each people as person (person.id)}
 	<div>
 		<h4>
