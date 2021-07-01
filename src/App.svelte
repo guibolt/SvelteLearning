@@ -16,12 +16,19 @@ import Modal from './components/Modal.svelte';
 </script>
 
 
-<Modal
- message ='Seja bem vindo'
- promo={true} 
- showModal = {showModal}
- on:click={exibitModal}
- />
+<Modal {showModal} on:click={exibitModal}>,
+	<h3>
+		<form action="">
+			<input type="text" placeholder="name">
+			<input type="text" placeholder="belt color">
+			<button>Add person</button>
+		</form>
+	</h3>
+	<div slot="tit">
+		ebbe
+	</div>
+</Modal>
+
 
 <main>
 	
