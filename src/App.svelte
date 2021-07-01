@@ -10,7 +10,11 @@ import AddPersonForm from './components/AddPersonForm.svelte';
 
 	const deletePerson = id => people = people.filter(person => person.id != id)
 	const exibitModal = () => showModal = !showModal
-
+	const addPerson = (event) => {
+		const person = event.detail
+		people = [person, ...people]
+		showModal = false
+	}
 	let showModal = false
 
 
@@ -18,7 +22,7 @@ import AddPersonForm from './components/AddPersonForm.svelte';
 
 
 <Modal {showModal} on:click={exibitModal}>,
-<AddPersonForm/>
+<AddPersonForm on:addPerson={addPerson}/>
 </Modal>
 
 
